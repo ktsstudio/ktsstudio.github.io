@@ -1,0 +1,47 @@
+@import 'variables';
+@import '~include-media/dist/_include-media.scss';
+
+@mixin gpu-layer($will-change: transform) {
+  transform: translateZ(0);
+  will-change: $will-change;
+}
+
+@mixin animation() {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+@mixin not-touch() {
+  @supports ((not (-webkit-overflow-scrolling: touch))) {
+    @content;
+  }
+}
+
+@mixin retina($density: 2) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $density),
+  only screen and (min--moz-device-pixel-ratio: $density),
+  only screen and (-o-min-device-pixel-ratio: #{$density}/1),
+  only screen and (min-device-pixel-ratio: $density),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: $density dppx) {
+    @content;
+  }
+}
+
+@mixin middle() {
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+
+@mixin align-middle() {
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -1,0 +1,107 @@
+@import "src/scss/mixins";
+
+@keyframes titlehide {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.header {
+  font-size: 2.4rem;
+  position: relative;
+  display: block;
+  padding: 10px 0 10px 120px;
+  z-index: 2;
+  width: 100%;
+
+  &_shadow {
+    box-shadow: 0px -8px 25px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &__burger {
+    $padding: 20px;
+
+    position: absolute;
+    padding: $padding;
+    top: 36px - $padding;
+    left: 50px - $padding;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+    box-sizing: content-box;
+
+    @include media("<=sm") {
+      left: 0;
+    }
+
+    &_case {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &_absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &_static, &_relative {
+    position: relative;
+  }
+
+  &_fixed {
+    //overflow: hidden;
+    position: fixed;
+    width: auto;
+    top:0;
+    left: 0;
+    right: 0;
+  }
+
+  &_case {
+    padding: 0;
+  }
+
+  &_white {
+    color: $white;
+  }
+
+  &_black {
+    color: $black;
+  }
+
+  &_bg-white {
+    background-color: $white;
+  }
+
+  &_bg-black {
+    background-color: $black;
+  }
+
+  &_bg-transparent {
+    background-color: transparent;
+  }
+
+  &__title {
+    line-height: 60px;
+    transition: opacity 0.1s linear;
+
+    &_hide {
+      opacity: 0;
+      animation: titlehide 5s;
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+    }
+  }
+
+  @include media('<=sm') {
+    padding-left: 50px;
+  }
+}

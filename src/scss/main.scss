@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+
+::selection {
+  background-color: #fff;
+  color: #168de2;
+}
+
+:global {
+  .visible {
+    opacity: 1;
+  }
+
+  .fixed {
+    position: fixed !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Get rid of 300ms touch delay in modern browsers
+  touch-action: manipulation;
+}
+
+body {
+  font: {
+    size: 15px;
+    weight: normal;
+    family: FuturaPT;
+  }
+  box-sizing: border-box;
+  color: #333333;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: {
+    family: sans-serif;
+    weight: normal;
+  }
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  :global .is-mobile :local &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}

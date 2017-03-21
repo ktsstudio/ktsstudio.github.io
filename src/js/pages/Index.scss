@@ -1,0 +1,21 @@
+@import 'src/scss/mixins';
+
+.index {
+  display: block;
+
+  &__projects {
+    width: 100%;
+    padding: 20px 120px 20px;
+
+    @include media('<=sm') {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @include media('<=xs') {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+}

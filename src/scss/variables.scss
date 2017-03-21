@@ -1,0 +1,22 @@
+$black: #111111;
+$white: #ffffff;
+$gray: #959595;
+$darkBlue: #3030C7;
+$darkBlueHover: #2f2fa5;
+$darkBlueActive: #2f2f91;
+$yellow: #FFF799;
+
+$breakpoints: (
+        xs: 450px,
+        sm: 768px,
+        md: 992px,
+        lg: 1230px,
+        phone: 320px
+);
+
+:export {
+  xs: map-get($breakpoints, "xs") / 1px;
+  sm: map-get($breakpoints, "sm") / 1px;
+  md: map-get($breakpoints, "md") / 1px;
+  lg: map-get($breakpoints, "lg") / 1px;
+}
