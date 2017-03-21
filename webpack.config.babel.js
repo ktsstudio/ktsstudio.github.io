@@ -24,7 +24,7 @@ const config = {
         path: dist,
         filename: `js/[name]${isProd ? '.[hash:6]' : ''}.js`,
         chunkFilename: 'js/[name].[hash:6].js',
-        publicPath: isProd ? 'dist/' : 'http://localhost:8080/',
+        publicPath: isProd ? '/dist/' : 'http://localhost:8080/',
     },
     resolve: {
         modules: modulesDirectories,
@@ -59,7 +59,7 @@ const config = {
                 loader: 'url-loader',
                 query: {
                     limit: 256,
-                    publicPath: '../',
+                    publicPath: '/dist/',
                     name: 'fonts/[name]-[hash:6].[ext]'
                 }
             },
@@ -67,8 +67,8 @@ const config = {
                 test: /^(?!.*fonts)\/.*?\.(jpg|jpeg|gif|png|svg|ico)$/,
                 loader: 'url-loader',
                 query: {
-                    limit: 2048,
-                    publicPath: '../',
+                    limit: 1024,
+                    publicPath: '/dist/',
                     name: 'img/[name]-[hash:6].[ext]'
                 }
             },
@@ -76,7 +76,7 @@ const config = {
                 test: /\.scss/,
                 exclude: /node_modules/,
                 loader: extractCss.extract([
-                    `css-loader?modules&importLoaders=1&localIdentName=[local]--[hash:base64:6]${isProd ? '' : '&sourceMap'}`,
+                    `css-loader?modules&importLoaders=1&localIdentName=[local]--[hash:base64:4]${isProd ? '' : '?sourceMap'}`,
                     `postcss-loader${isProd ? '' : '?sourceMap'}`,
                     `resolve-url-loader${isProd ? '' : '?sourceMap'}`,
                     `sass-loader${isProd ? '' : '?sourceMap'}`
