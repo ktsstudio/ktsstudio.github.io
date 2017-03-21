@@ -32,6 +32,13 @@
     height: 170px;
     background: transparent 50% 50% no-repeat;
     background-size: contain;
+
+    $logos: "rpmtools";
+    @each $logo in $logos {
+      &_#{$logo} {
+        background-image: url(./images/#{$logo}.png);
+      }
+    }
   }
 
   &__description {

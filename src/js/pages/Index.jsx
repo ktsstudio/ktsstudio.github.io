@@ -11,7 +11,7 @@ function Index() {
             title: 'rpmtools',
             description: 'Набор утилит, упрощающих создание rpm-пакетов',
             link: 'https://ktsstudio.github.io/rpmtools/',
-            logo: require('./images/rpmtools.png'),
+            logo: 'rpmtools',
         }
     ];
 
